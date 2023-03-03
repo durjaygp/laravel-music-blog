@@ -36,8 +36,12 @@
                                 @csrf
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Category Title</label>
+                                        <label for="exampleInputEmail1">Category Name</label>
                                         <input type="text" name="name" class="form-control" placeholder="Enter Category Title">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Category Description <span class="text-sm text-gray-400">(Optional)</span></label>
+                                        <textarea name="description" id="" cols="30" rows="7" class="form-control" placeholder="Write a short Description in 125 words"></textarea>
                                     </div>
                                     <div class="form-group">
                                         <label>Select Status</label>
@@ -58,7 +62,7 @@
                           <div class="container-fluid">
                             <div class="row">
                               <div class="col-12">
-                                <div class="card">
+                                <div class="card card-primary">
                                   <div class="card-header">
                                     <h3 class="card-title">Category List</h3>
                                   </div>
@@ -67,7 +71,7 @@
                                     <table id="example" class="table table-bordered table-hover">
                                       <thead>
                                       <tr>
-                                        <th>Category Title</th>
+                                        <th>Category Name</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                       </tr>

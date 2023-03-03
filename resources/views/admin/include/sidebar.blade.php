@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="#" class="brand-link">
         <img src="{{asset('backEnd')}}/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">Admin Panel</span>
     </a>
@@ -46,15 +46,31 @@
                                 <p>Add Category</p>
                             </a>
                         </li>
+                    </ul>
+                </li>
+                <li class="nav-item {{ (\Request::route()->getName() == 'admin.blog') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-pencil-alt"></i>
+                        <p>
+                            Blog
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/charts/flot.html" class="nav-link">
+                            <a href="{{route('admin.blog')}}" class="nav-link {{ (\Request::route()->getName() == 'admin.blog') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Manage Category</p>
+                                <p>Create New Blog</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('blog.manage')}}" class="nav-link {{ (\Request::route()->getName() == 'blog.manage') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Manage Blogs</p>
                             </a>
                         </li>
                     </ul>
                 </li>
-
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

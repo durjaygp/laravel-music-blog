@@ -15,8 +15,10 @@
     <link rel="stylesheet" href="{{asset('backEnd')}}/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="{{asset('backEnd')}}/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
     <link rel="stylesheet" href="{{asset('backEnd')}}/iziToast/dist/css/iziToast.min.css" >
+    <link rel="stylesheet" href="{{ asset('backEnd') }}/drop/css/dropify.min.css">
+    <link rel="stylesheet" href="{{ asset('backEnd') }}/plugins/summernote/summernote-bs4.min.css">
 </head>
-<body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
 
     <!-- Navbar -->
@@ -59,6 +61,8 @@
 <script src="{{asset('backEnd')}}/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
 <script src="{{asset('backEnd')}}/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
 <script src="{{asset('backEnd')}}/iziToast/dist/js/iziToast.min.js"></script>
+<script src="{{asset('backEnd')}}/drop/js/dropify.min.js"></script>
+<script src="{{asset('backEnd')}}/plugins/summernote/summernote-bs4.min.js"></script>
 
 <script>
     $(document).ready(function () {
@@ -90,6 +94,19 @@
     </script>
 
 @endif
+<script>
+    $('.dropify').dropify();
+</script>
+<script>
+    $(function () {
+        // Summernote
+        $('#summernote').summernote({
+            placeholder: 'Please Write Your Post Content',
+            tabsize: 2,
+            height: 300
+        })
+    })
+</script>
 
 </body>
 </html>

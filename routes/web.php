@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\BlogController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +18,7 @@ use App\Http\Controllers\Admin\CategoryController;
 */
 
 Route::get('/',[HomeController::class, 'index'])->name('home');
+Route::get('/blog',[HomeController::class, 'blog'])->name('blog');
 
 
 
@@ -38,8 +40,15 @@ require __DIR__.'/auth.php';
 
 Route::group(['prefix'=>'admin/','middleware'=>'auth'],function(){
     Route::get('/', [AdminController::class, 'index'])->name('admin');
+
+    //-----Category Routes-----------
     Route::get('/category', [CategoryController::class, 'index'])->name('admin.category');
     Route::post('/category/store', [CategoryController::class, 'store'])->name('category.store');
+
+    //-----Blog Routes---------------
+    Route::get('/blog/add', [BlogController::class, 'index'])->name('admin.blog');
+    Route::post('/blog/save', [BlogController::class, 'store'])->name('blog.store');
+    Route::get('/blog/manage/' ,[BlogController::class, 'manageBlog'])->name('blog.manage');
 
 
 
