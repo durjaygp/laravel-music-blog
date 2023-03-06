@@ -6,6 +6,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\FrontBlogController;
+use App\Http\Controllers\Admin\AdminUserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +20,8 @@ use App\Http\Controllers\Admin\BlogController;
 */
 
 Route::get('/',[HomeController::class, 'index'])->name('home');
-Route::get('/blog',[HomeController::class, 'blog'])->name('blog');
+
+Route::get('/blog/{slug}',[FrontBlogController::class, 'blog'])->name('blog');
 
 
 
@@ -44,11 +47,17 @@ Route::group(['prefix'=>'admin/','middleware'=>'auth'],function(){
     //-----Category Routes-----------
     Route::get('/category', [CategoryController::class, 'index'])->name('admin.category');
     Route::post('/category/store', [CategoryController::class, 'store'])->name('category.store');
+    Route::get('/category/delete/{id}', [CategoryController::class, 'delete'])->name('category.delete');
 
     //-----Blog Routes---------------
     Route::get('/blog/add', [BlogController::class, 'index'])->name('admin.blog');
     Route::post('/blog/save', [BlogController::class, 'store'])->name('blog.store');
     Route::get('/blog/manage/' ,[BlogController::class, 'manageBlog'])->name('blog.manage');
+
+    //-------User Settings------------
+
+    Route::get('/user/settings', [AdminUserController::class, 'index'])->name('admin.user');
+    Route::post('user/setting/update',[AdminUserController::class, 'update'])->name('admin.user.update');
 
 
 

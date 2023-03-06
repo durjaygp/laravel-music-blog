@@ -71,6 +71,15 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item {{ (\Request::route()->getName() == 'admin.user') ? 'menu-open' : '' }}">
+                    <a href="{{route('admin.user')}}" class="nav-link {{ (\Request::route()->getName() == 'admin.user') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-user"></i>
+                        <p>
+                            Profile Settings
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

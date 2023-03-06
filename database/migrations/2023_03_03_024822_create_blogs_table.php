@@ -21,6 +21,7 @@ return new class extends Migration
             $table->foreignId('category_id');
             $table->foreignId('user_id');
             $table->tinyInteger('status')->default(1);
+            $table->tinyInteger('feature');
             $table->timestamps();
         });
     }

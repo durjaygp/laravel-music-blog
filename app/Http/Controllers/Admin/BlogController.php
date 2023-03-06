@@ -24,9 +24,10 @@ class BlogController extends Controller
         ]);
         $this->blog = new Blog();
         $this->blog->title = $request->title;
-        $this->blog->slug = Str::slug($request->name,'-');
+        $this->blog->slug = Str::slug($request->title,'-');
         $this->blog->description = $request->description;
         $this->blog->body = $request->body;
+        $this->blog->feature = $request->feature;
         $this->blog->category_id = $request->category_id;
         $this->blog->status = $request->status;
         $this->blog->user_id = auth()->user()->id;

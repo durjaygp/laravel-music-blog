@@ -83,8 +83,7 @@
                                         <td class="{{$category->status==1? 'text-success':'text-danger'}}">{{$category->status == 1? 'Published': 'Unpublished'}}</td>
                                         <td>
                                             <a href="" class="btn btn-sm btn-primary"> <i class="fas fa-edit"></i></a>
-                                            <a href="" class="btn btn-sm btn-primary"> <i class="fas fa-eye"></i></a>
-                                            <a href="" class="btn  btn-sm  btn-danger"> <i class="fas fa-trash"></i></a>
+                                            <a href="{{route('category.delete',['id'=>$category->id])}}" class="btn  btn-sm  btn-danger"> <i class="fas fa-trash"></i></a>
                                         </td>
                                       </tr>
                                       @endforeach

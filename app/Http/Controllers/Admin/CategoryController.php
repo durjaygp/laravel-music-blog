@@ -9,7 +9,7 @@ use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
-    public $blog;
+    public $blog, $category;
     public function index(){
         return view('admin.category.create',[
             'categories'=>Category::latest()->get(),
@@ -28,5 +28,16 @@ class CategoryController extends Controller
         $this->blog->slug = Str::slug($request->name, '-');
         $this->blog->save();
         return redirect()->back()->with('success','Category Created Successfully');
+    }
+
+    public function delete($id){
+        $category_default_id = Category::where('name','Uncategorized')->first()->id;
+        $this->category = Category::find($id);
+        if ($this->category-> name === 'Uncategorized')
+            abort(404);
+
+        $this->category->blogs()->update(['category_id'=>$category_default_id]);
+        $this->category->delete();
+        return redirect()->back()->with('success', 'Category Has been deleted.');
     }
 }

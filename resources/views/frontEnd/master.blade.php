@@ -8,7 +8,7 @@
    <meta name="description" content="" />
    <meta name="keywords" content="" />
    <!-- Title-->
-   <title>Blog Home Page</title>
+   <title>@yield('title')</title>
    <!-- Favicon-->
    <link rel="icon" href="{{asset('frontEnd')}}/img/favicon.jpg" type="image/x-icon" />
    <!-- Stylesheets-->

@@ -68,6 +68,13 @@
                                             <option value="0">Unpublished</option>
                                         </select>
                                     </div>
+                                    <div class="form-group">
+                                        <label>Feature Status</label>
+                                        <select class="custom-select" name="feature">
+                                            <option value="1">Active</option>
+                                            <option value="0">Disabled</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="card-footer">
                                     <button type="submit" class="btn btn-success">Submit</button>

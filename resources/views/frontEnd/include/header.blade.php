@@ -20,7 +20,7 @@
                     <div class="menu-primary-container navigation_wrapper">
                         <ul id="mainmenu" class="jl_main_menu">
                             <li class="menu-item">
-                                <a href="#">Home<span class="border-menu"></span></a>
+                                <a href="{{route('home')}}">Home<span class="border-menu"></span></a>
                             </li>
                             <li class="menu-item menu-item-has-children">
                                 <a href="#">Category</span><span

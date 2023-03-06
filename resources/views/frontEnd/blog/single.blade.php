@@ -1,210 +1,209 @@
 @extends('frontEnd.master')
-@section('title','Homepage')
+@section('title')
+    {{$blog->title}}
+@endsection
 @section('content')
-    <div class="container">
-        <div class="row jl_front_b_cont">
-            <div class="col-md-12 jl_mid_main_3col">
-                <div class="jl_3col_wrapin">
-                    <div id="pl-3476" class="panel-layout">
-                        <div id="pg-3476-0" class="panel-grid panel-no-style">
-                            <div id="pgc-3476-0-0" class="panel-grid-cell">
-                                <span class="jl_none_space"></span>
-                                <div id="panel-3476-0-0-0"
-                                     class="so-panel widget widget_disto_recent_grid5_widgets jl_widget_recent_grid5 panel-first-child panel-last-child"
-                                     data-index="0">
-                                    <div class="jl_grid5_builder jelly_homepage_builder">
-                                        <div class="jl_grid5_wrapper">
-                                            <div class="jl_grid5_container">
-                                                <div class="jl_grid5_item jl_grid5main jl_grid1">
-                                                    <div class="jl_grid5_itemin">
-                                     <span class="image_grid_header_absolute" style="
-                                         background-image: url('{{asset('frontEnd')}}/images/thought-catalog-454225-unsplash-780x450.jpg');
-                                         "></span>
-                                                        <a href="#" class="link_grid_header_absolute"
-                                                           title="Creative photography ideas from smart devices"></a>
-                                                        <span class="meta-category-small"><a class="post-category-color-text"
-                                                                                             style="background: #7fbc1e" href="#">Health</a></span>
-                                                        <div class="wrap_box_style_main image-post-title">
-                                                            <h3 class="image-post-title">
-                                                                <a href="#">
-                                                                    Creative photography ideas from smart
-                                                                    devices</a>
-                                                            </h3>
-                                                            <span class="jl_post_meta"><span class="jl_author_img_w"><img src="{{asset('frontEnd')}}/img/favicon.jpg"
-                                                                                                                          width="30" height="30" alt="Anna Nikova"
-                                                                                                                          class="avatar avatar-30 wp-user-avatar wp-user-avatar-30 alignnone photo" /><a
-                                                                        href="#" title="Posts by Anna Nikova" rel="author">Anna Nikova</a></span><span
-                                                                    class="post-date"><i class="fa fa-clock-o"></i>Dec 23,
-                                           2016</span></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
+    <section id="content_main" class="clearfix jl_spost">
+        <div class="container">
+            <div class="row main_content">
+                <div class="col-md-8  loop-large-post" id="content">
+                    <div class="widget_container content_page">
+                        <!-- start post -->
+                        <div class="post-103 post type-post status-publish format-audio has-post-thumbnail hentry category-health tag-inspiration tag-swim tag-water post_format-post-format-audio" id="post-103">
+                            <div class="single_section_content box blog_large_post_style">
+                                <div class="jl_single_style2">
+                                    <div class="single_post_entry_content single_bellow_left_align jl_top_single_title jl_top_title_feature">
+                                        <span class="meta-category-small single_meta_category"><a class="post-category-color-text" style="background:#7fbc1e" href="#">{{$blog->category->name}}</a></span>
+                                        <h1 class="single_post_title_main" alt="{{$blog->title}}">{{$blog->title}}</h1>
+                                        <p class="post_subtitle_text">
+                                            {{$blog->description}}
+                                        </p>
+                                        <span class="single-post-meta-wrapper">
+                                            <span class="post-author"><span><img src="img/favicon.jpg" width="50" height="50" alt="{{$blog->user->name}}" class="avatar avatar-50 wp-user-avatar wp-user-avatar-50 alignnone photo" />
+                                                    <a href="#" title="Posts by {{$blog->user->name}}" rel="author">{{$blog->user->name}}</a></span></span>
+                                            <span class="post-date updated"><i class="fa fa-clock-o"></i>{{ $blog->created_at->format('M d, Y') }}</span>
 
-                                                <div class="jl_grid5_item jl_grid5small jl_grid2">
-                                                    <div class="jl_grid5_itemin">
-                                     <span class="image_grid_header_absolute" style="
-                                         background-image: url('{{asset('frontEnd')}}/images/food-pizza-fast-food-780x450.jpg');
-                                         "></span>
-                                                        <a href="#" class="link_grid_header_absolute"
-                                                           title="Have good food taste then enjoy reading"></a>
-                                                        <span class="meta-category-small"><a class="post-category-color-text"
-                                                                                             style="background: #7fbc1e" href="#">Health</a></span>
-                                                        <span class="jl_post_type_icon"><i class="la la-camera"></i></span>
-                                                        <div class="wrap_box_style_main image-post-title">
-                                                            <h3 class="image-post-title">
-                                                                <a href="#">
-                                                                    Have good food taste then enjoy
-                                                                    reading</a>
-                                                            </h3>
-                                                            <span class="jl_post_meta"><span class="jl_author_img_w"><img src="{{asset('frontEnd')}}/img/favicon.jpg"
-                                                                                                                          width="30" height="30" alt="Anna Nikova"
-                                                                                                                          class="avatar avatar-30 wp-user-avatar wp-user-avatar-30 alignnone photo" /><a
-                                                                        href="#" title="Posts by Anna Nikova" rel="author">Anna Nikova</a></span><span
-                                                                    class="post-date"><i class="fa fa-clock-o"></i>Dec 23,
-                                           2016</span></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="jl_grid5_item jl_grid5small jl_grid3">
-                                                    <div class="jl_grid5_itemin">
-                                     <span class="image_grid_header_absolute" style="
-                                         background-image: url('{{asset('frontEnd')}}/images/scott-webb-207709-unsplash-780x450.jpg');
-                                         "></span>
-                                                        <a href="#" class="link_grid_header_absolute"
-                                                           title="It really have good feeling when you enjoy nature"></a>
-                                                        <span class="meta-category-small"><a class="post-category-color-text"
-                                                                                             style="background: #6b34ba" href="#">Gaming</a></span>
-                                                        <span class="jl_post_type_icon"><i class="la la-camera"></i></span>
-                                                        <div class="wrap_box_style_main image-post-title">
-                                                            <h3 class="image-post-title">
-                                                                <a href="#">
-                                                                    It really have good feeling when you
-                                                                    enjoy nature</a>
-                                                            </h3>
-                                                            <span class="jl_post_meta"><span class="jl_author_img_w"><img src="{{asset('frontEnd')}}/img/favicon.jpg"
-                                                                                                                          width="30" height="30" alt="Anna Nikova"
-                                                                                                                          class="avatar avatar-30 wp-user-avatar wp-user-avatar-30 alignnone photo" /><a
-                                                                        href="#" title="Posts by Anna Nikova" rel="author">Anna Nikova</a></span><span
-                                                                    class="post-date"><i class="fa fa-clock-o"></i>Dec 23,
-                                           2016</span></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="jl_grid5_item jl_grid5small jl_grid4">
-                                                    <div class="jl_grid5_itemin">
-                                     <span class="image_grid_header_absolute" style="
-                                         background-image: url('{{asset('frontEnd')}}/images/samuel-dixon-119943-unsplash-780x450.jpg');
-                                         "></span>
-                                                        <a href="#" class="link_grid_header_absolute"
-                                                           title="the best place to celebrate birthday and swim"></a>
-                                                        <span class="meta-category-small"><a class="post-category-color-text"
-                                                                                             style="background: #7fbc1e" href="#">Health</a></span>
-                                                        <span class="jl_post_type_icon"><i class="la la-camera"></i></span>
-                                                        <div class="wrap_box_style_main image-post-title">
-                                                            <h3 class="image-post-title">
-                                                                <a href="#">
-                                                                    the best place to celebrate birthday
-                                                                    and swim</a>
-                                                            </h3>
-                                                            <span class="jl_post_meta"><span class="jl_author_img_w"><img src="{{asset('frontEnd')}}/img/favicon.jpg"
-                                                                                                                          width="30" height="30" alt="Anna Nikova"
-                                                                                                                          class="avatar avatar-30 wp-user-avatar wp-user-avatar-30 alignnone photo" /><a
-                                                                        href="#" title="Posts by Anna Nikova" rel="author">Anna Nikova</a></span><span
-                                                                    class="post-date"><i class="fa fa-clock-o"></i>Dec 23,
-                                           2016</span></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="jl_grid5_item jl_grid5small jl_grid5">
-                                                    <div class="jl_grid5_itemin">
-                                     <span class="image_grid_header_absolute" style="
-                                         background-image: url('{{asset('frontEnd')}}/images/oladimeji-odunsi-434639-unsplash-780x450.jpg');
-                                         "></span>
-                                                        <a href="#" class="link_grid_header_absolute"
-                                                           title="The most popular photoshop styles of the year"></a>
-                                                        <span class="meta-category-small"><a class="post-category-color-text"
-                                                                                             style="background: #7fbc1e" href="#">Health</a></span>
-                                                        <span class="jl_post_type_icon"><i class="la la-camera"></i></span>
-                                                        <div class="wrap_box_style_main image-post-title">
-                                                            <h3 class="image-post-title">
-                                                                <a href="#">
-                                                                    The most popular photoshop styles of
-                                                                    the year</a>
-                                                            </h3>
-                                                            <span class="jl_post_meta"><span class="jl_author_img_w"><img src="{{asset('frontEnd')}}/img/favicon.jpg"
-                                                                                                                          width="30" height="30" alt="Anna Nikova"
-                                                                                                                          class="avatar avatar-30 wp-user-avatar wp-user-avatar-30 alignnone photo" /><a
-                                                                        href="#" title="Posts by Anna Nikova" rel="author">Anna Nikova</a></span><span
-                                                                    class="post-date"><i class="fa fa-clock-o"></i>Dec 23,
-                                           2016</span></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        </span>
+                                    </div>
+                                    <div class="single_content_header jl_single_feature_below">
+                                        <div class="image-post-thumb jlsingle-title-above">
+                                            <img src="{{asset($blog->image)}}" alt="{{$blog->title}}">
                                         </div>
                                     </div>
-                                    <span class="jl_none_space"></span>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Home grid section -->
-    <div class="jl_home_section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 jl_mid_main_3col">
-                    <div class="jl_3col_wrapin">
-                        <div class="jelly_homepage_builder jl_nonav_margin homepage_builder_3grid_post jl_fontsize22 jl_cus_grid3 colstyle1">
-                            <div class="homepage_builder_title">
-                                <h2>Latest Blog</h2>
-                                <span class="jl_hsubt"></span>
-                            </div>
-                            <div class="jl_wrapper_row">
-                                <div class="row">
-                                    @foreach($blogs as $blog)
-                                        <div class="col-md-4 blog_grid_post_style jl_row_1">
-                                            <div class="jl_grid_box_wrapper">
+                                <div class="post_content">
+                                    <p>{!!$blog->body !!}
+                                    </p>
+                                    </div>
+                                <div class="clearfix"></div>
+                                <div class="auth">
+                                    <div class="author-info">
+                                        <div class="author-avatar">
+                                            <img src="img/favicon.jpg" width="165" height="165" alt="{{$blog->user->name}}" class="avatar avatar-165 wp-user-avatar wp-user-avatar-165 alignnone photo" />                                    </div>
+                                        <div class="author-description">
+                                            <h5><a href="#">{{$blog->user->name}}</a></h5>
+                                            <p>
+                                                Mauris mattis auctor cursus. Phasellus tellus tellus, imperdiet ut imperdiet eu,
+                                                iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat.
+                                                Suspendisse vulputate porttitor condimentum.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            <!--<div class="related-posts">
+
+                                    <h4>
+                                        Related Articles                                </h4>
+
+                                    <div class="single_related_post">
+
+
+                                        <div class="jl_related_feature_items">
+                                            <div class="jl_related_feature_items_in">
                                                 <div class="image-post-thumb">
-                                                    <a href="#" class="link_image featured-thumbnail"
-                                                       title="{{$blog->title}}">
-                                                        <img width="780" height="450"
-                                                             src="{{asset($blog->image)}}"
-                                                             class="attachment-disto_large_feature_image size-disto_large_feature_image wp-post-image"
-                                                             alt="{{$blog->title}}" />
-                                                        <div class="background_over_image"></div>
+                                                    <a href="#" class="link_image featured-thumbnail" title="This is a great toy and beautiful for short">
+                                                        <img width="780" height="450" src="{{asset('frontEnd')}}/images/irina-iriser-654436-unsplash-780x450.jpg" class="attachment-disto_large_feature_image size-disto_large_feature_image wp-post-image" alt="" />                                                    <div class="background_over_image"></div>
                                                     </a>
-                                                    <span class="meta-category-small"><a class="post-category-color-text"
-                                                                                         style="background: #d66300" href="#">{{$blog->category->name}}</a></span>
                                                 </div>
+                                                <span class="meta-category-small"><a class="post-category-color-text" style="background:#7fbc1e" href="#">Health</a></span>
                                                 <div class="post-entry-content">
-                                                    <h3 class="image-post-title" alt="{{$blog->title}}">
-                                                        <a href="#" >{{$blog->title}}</a>
-                                                    </h3>
-                                                    <span class="jl_post_meta"><span class="jl_author_img_w">
-                                                <img src="{{asset('frontEnd')}}/img/favicon.jpg" width="30" height="30" alt="{{$blog->user->name}}"
-                                                     class="avatar avatar-30 wp-user-avatar wp-user-avatar-30 alignnone photo" /><a
-                                                                href="#" title="Posts by {{$blog->user->name}}" rel="author">{{$blog->user->name}}</a></span><span class="post-date"><i
-                                                                class="fa fa-clock-o"></i>{{date("jS M, Y. g:i A"),strtotime($blog->created_at)}}</span></span>
-                                                    <div class="content_post_grid">
-                                                        <p>{{Str::limit($blog->description, 150)}}</p>
-                                                    </div>
-                                                </div>
+                                                    <h3 class="jl-post-title"><a href="#">
+                                                            This is a great toy and beautiful for short</a></h3>
+                                                    <span class="jl_post_meta"><span class="jl_author_img_w"><img src="img/favicon.jpg" width="30" height="30" alt="Anna Nikova" class="avatar avatar-30 wp-user-avatar wp-user-avatar-30 alignnone photo" /><a href="#" title="Posts by Anna Nikova" rel="author">Anna Nikova</a></span><span class="post-date"><i class="fa fa-clock-o"></i>Dec 24, 2016</span></span>                                            </div>
+
                                             </div>
                                         </div>
-                                    @endforeach
+
+
+
+                                        <div class="jl_related_feature_items">
+                                            <div class="jl_related_feature_items_in">
+                                                <div class="image-post-thumb">
+                                                    <a href="#" class="link_image featured-thumbnail" title="Creative photography ideas from smart devices">
+                                                        <img width="780" height="450" src="{{asset('frontEnd')}}/images/mikky-koopac-1056364-unsplash-780x450.jpg" class="attachment-disto_large_feature_image size-disto_large_feature_image wp-post-image" alt="" />                                                    <div class="background_over_image"></div>
+                                                    </a>
+                                                </div>
+                                                <span class="meta-category-small"><a class="post-category-color-text" style="background:#7fbc1e" href="#">Health</a></span>
+                                                <div class="post-entry-content">
+                                                    <h3 class="jl-post-title"><a href="#">
+                                                            Creative photography ideas from smart devices</a></h3>
+                                                    <span class="jl_post_meta"><span class="jl_author_img_w"><img src="img/favicon.jpg" width="30" height="30" alt="Anna Nikova" class="avatar avatar-30 wp-user-avatar wp-user-avatar-30 alignnone photo" /><a href="#" title="Posts by Anna Nikova" rel="author">Anna Nikova</a></span><span class="post-date"><i class="fa fa-clock-o"></i>Dec 23, 2016</span></span>                                            </div>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="clear_2col_related"></div>
+                                        <div class="jl_related_feature_items">
+                                            <div class="jl_related_feature_items_in">
+                                                <div class="image-post-thumb">
+                                                    <a href="#" class="link_image featured-thumbnail" title="Have good food taste then enjoy reading">
+                                                        <img width="780" height="450" src="{{asset('frontEnd')}}/images/bruce-christianson-559084-unsplash-780x450.jpg" class="attachment-disto_large_feature_image size-disto_large_feature_image wp-post-image" alt="" />                                                    <div class="background_over_image"></div>
+                                                    </a>
+                                                </div>
+                                                <span class="meta-category-small"><a class="post-category-color-text" style="background:#7fbc1e" href="#">Health</a></span><span class="jl_post_type_icon"><i class="la la-camera"></i></span>
+                                                <div class="post-entry-content">
+                                                    <h3 class="jl-post-title"><a href="#">
+                                                            Have good food taste then enjoy reading</a></h3>
+                                                    <span class="jl_post_meta"><span class="jl_author_img_w"><img src="img/favicon.jpg" width="30" height="30" alt="Anna Nikova" class="avatar avatar-30 wp-user-avatar wp-user-avatar-30 alignnone photo" /><a href="#" title="Posts by Anna Nikova" rel="author">Anna Nikova</a></span><span class="post-date"><i class="fa fa-clock-o"></i>Dec 23, 2016</span></span>                                            </div>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="clear_3col_related"></div>
+                                        <div class="jl_related_feature_items">
+                                            <div class="jl_related_feature_items_in">
+                                                <div class="image-post-thumb">
+                                                    <a href="#" class="link_image featured-thumbnail" title="the best place to celebrate birthday and swim">
+                                                        <img width="780" height="450" src="{{asset('frontEnd')}}/images/icons8-team-554108-unsplash-780x450.jpg" class="attachment-disto_large_feature_image size-disto_large_feature_image wp-post-image" alt="" />                                                    <div class="background_over_image"></div>
+                                                    </a>
+                                                </div>
+                                                <span class="meta-category-small"><a class="post-category-color-text" style="background:#7fbc1e" href="#">Health</a></span><span class="jl_post_type_icon"><i class="la la-camera"></i></span>
+                                                <div class="post-entry-content">
+                                                    <h3 class="jl-post-title"><a href="#">
+                                                            the best place to celebrate birthday and swim</a></h3>
+                                                    <span class="jl_post_meta"><span class="jl_author_img_w"><img src="img/favicon.jpg" width="30" height="30" alt="Anna Nikova" class="avatar avatar-30 wp-user-avatar wp-user-avatar-30 alignnone photo" /><a href="#" title="Posts by Anna Nikova" rel="author">Anna Nikova</a></span><span class="post-date"><i class="fa fa-clock-o"></i>Dec 23, 2016</span></span>                                            </div>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="clear_2col_related"></div>                                                                    </div>
+
                                 </div>
+                                <!-- comment
+
+                                <div id="respond" class="comment-respond">
+                                    <h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="#" style="display:none;">Cancel reply</a></small></h3>
+                                    <form action="#" method="post" id="commentform" class="comment-form">
+                                        <p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span>
+                                        </p>
+                                        <p class="comment-form-comment">
+                                            <textarea class="u-full-width" id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="Comment"></textarea>
+                                        </p>
+                                        <div class="form-fields row"><span class="comment-form-author col-md-4"><input id="author" name="author" type="text" value="" size="30" placeholder="Fullname"></span>
+                                            <span class="comment-form-email col-md-4"><input id="email" name="email" type="text" value="" size="30" placeholder="Email Address"></span>
+                                            <span class="comment-form-url col-md-4"><input id="url" name="url" type="text" value="" size="30" placeholder="Web URL"></span>
+                                        </div>
+                                        <p class="form-submit">
+                                            <input name="submit" type="submit" id="submit" class="submit" value="Post Comment">
+                                        </p>
+                                    </form>
+                                </div> #respond -->
+
                             </div>
                         </div>
+                        <!-- end post -->
+                        <div class="brack_space"></div>
                     </div>
+                </div>
+
+                <div class="col-md-4" id="sidebar">
+                    <div id="disto_recent_post_widget-7" class="widget post_list_widget">
+                        <div class="widget_jl_wrapper"><span class="jl_none_space"></span>
+                            <div class="widget-title">
+                                <h2>Recent Posts</h2>
+                            </div>
+                            <div>
+                                <ul class="feature-post-list recent-post-widget">
+                                    @foreach($recentblog as $blog)
+                                    <li>
+                                        <a href="#" class="jl_small_format feature-image-link image_post featured-thumbnail" title="$blog->title">
+                                            <img width="120" height="120" src="{{asset($blog->image)}}" class="attachment-disto_small_feature size-disto_small_feature wp-post-image" alt="{{$blog->title}}" />
+                                            <div class="background_over_image"></div>
+                                        </a>
+                                        <div class="item-details">
+                                            <span class="meta-category-small"><a class="post-category-color-text" style="background:#d800f9" href="#">{{$blog->category->name}}</a></span>
+                                            <h3 class="feature-post-title"><a href="{{route('blog',$blog->slug)}}">{{$blog->title}}</a></h3>
+                                            <span class="post-meta meta-main-img auto_image_with_date">
+                                                <span class="post-date"><i class="fa fa-clock-o"></i>{{ $blog->created_at->format('M d, Y') }}</span></span>
+                                        </div>
+                                    </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            <span class="jl_none_space"></span>
+                        </div>
+                    </div>
+                    <span class="jl_none_space"></span>
+                    <div id="disto_category_image_widget_register-5" class="widget jellywp_cat_image">
+                        <div class="wrapper_category_image">
+                            <div class="category_image_wrapper_main">
+                                @foreach($categories as $category)
+                                <div class="category_image_bg_image" style="">
+                                    <a class="category_image_link" id="category_color_4" href="#">
+                                        <span class="jl_cm_overlay"><span class="jl_cm_name">{{$category->name}}</span><span class="jl_cm_count">{{$category->blogs_count}}</span></span></a>
+                                    <div class="category_image_bg_overlay" style="background: #d1783c;"></div>
+                                </div>
+                                @endforeach
+                            </div> <span class="jl_none_space"></span>
+                        </div>
+                    </div><span class="jl_none_space"></span>
+
+                    <span class="jl_none_space"></span>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 @endsection
