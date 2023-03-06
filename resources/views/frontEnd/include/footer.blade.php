@@ -95,9 +95,9 @@
                             </div>
                             <div>
                                 <ul class="feature-post-list recent-post-widget">
-                                    @foreach($recentfooter as $recentfooter)
+                                    @foreach($footer_recentblog as $recentfooter)
                                     <li>
-                                        <a href="#"
+                                        <a href="{{route('blog',$recentfooter->slug)}}"
                                            class="jl_small_format feature-image-link image_post featured-thumbnail"
                                            title="Round white dining table on brown hardwood">
                                             <img width="120" height="120"
@@ -108,13 +108,12 @@
                                         </a>
                                         <div class="item-details">
                                           <span class="meta-category-small"><a class="post-category-color-text"
-                                                                               style="background: #36c942" href="#">{{$recentfooter->category->name}}</a></span>
+                                                                               style="background: #36c942" href="{{route('category.wise.blog',$recentfooter->category->slug)}}">{{$recentfooter->category->name}}</a></span>
                                             <h3 class="feature-post-title">
-                                                <a href="#">{{$recentfooter->title}}</a>
+                                                <a href="{{route('blog',$recentfooter->slug)}}">{{$recentfooter->title}}</a>
                                             </h3>
                                             <span class="post-meta meta-main-img auto_image_with_date">
-                                             <span class="post-date"><i class="fa fa-clock-o"></i>Mar 10,
-                                                2019</span></span>
+                                             <span class="post-date"><i class="fa fa-clock-o"></i>{{ $recentfooter->created_at->format('M d, Y') }}</span></span>
                                         </div>
                                     </li>
                                     @endforeach
@@ -131,10 +130,10 @@
                             <h2>Categories</h2>
                         </div>
                         <ul>
-                            @foreach($footercate as $category)
+                            @foreach($footer_categories as $footer_category)
                             <li class="cat-item cat-item-2">
-                                <a href="#" title="Sample category description goes here">{{$category->name}}</a>
-                                <span>{{$category->blogs_count}}</span>
+                                <a href="{{route('category.wise.blog',$footer_category->slug)}}" title="{{$footer_category->description}}">{{$footer_category->name}}</a>
+                                <span>{{$footer_category->blogs_count}}</span>
                             </li>
                             @endforeach
 
@@ -148,7 +147,7 @@
         <div class="container">
             <div class="row bottom_footer_menu_text">
                 <div class="col-md-6 footer-left-copyright">
-                    © Copyright 2019 Jellywp. All Rights Reserved Powered by
+                    © Copyright @php echo date('Y'); @endphp Jellywp. All Rights Reserved Powered by
                     Jellywp
                 </div>
                 <div class="col-md-6 footer-menu-bottom">

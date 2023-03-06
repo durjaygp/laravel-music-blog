@@ -20,17 +20,10 @@ use App\Http\Controllers\Admin\AdminUserController;
 */
 
 Route::get('/',[HomeController::class, 'index'])->name('home');
-
 Route::get('/blog/{slug}',[FrontBlogController::class, 'blog'])->name('blog');
-
-
-
-
-
-
-
-
-
+Route::get('/category/{slug}',[FrontBlogController::class, 'categoryWiseBlog'])->name('category.wise.blog');
+Route::get('/author/{id}',[FrontBlogController::class, 'authorWiseBlog'])->name('author.wise.blog');
+Route::post('/search',[FrontBlogController::class, 'searchWiseBlog'])->name('search.wise.blog');
 
 
 Route::middleware('auth')->group(function () {

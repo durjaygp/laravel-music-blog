@@ -27,7 +27,7 @@
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
-                            <i class="right fas fa-angle-left"></i>
+                            
                         </p>
                     </a>
                 </li>
@@ -76,7 +76,7 @@
                         <i class="nav-icon fas fa-user"></i>
                         <p>
                             Profile Settings
-                            <i class="right fas fa-angle-left"></i>
+                            
                         </p>
                     </a>
                 </li>

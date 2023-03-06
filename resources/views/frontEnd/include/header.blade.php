@@ -1,4 +1,4 @@
-<header
+<header>
     <div class="header-wraper jl_header_magazine_style two_header_top_style header_layout_style3_custom jl_cusdate_head">
 
     <!-- Start Main menu -->
@@ -22,30 +22,11 @@
                             <li class="menu-item">
                                 <a href="{{route('home')}}">Home<span class="border-menu"></span></a>
                             </li>
-                            <li class="menu-item menu-item-has-children">
-                                <a href="#">Category</span><span
-                                        class="border-menu"></span></a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item">
-                                        <a href="#">Post Layout<span class="border-menu"></span></a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="author.html">Author Page<span class="border-menu"></span></a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="category.html">Category Page<span class="border-menu"></span></a>
-                                    </li>
-                                </ul>
-                            </li>
+                            @foreach($header_categories as $header_category)
                             <li class="menu-item">
-                                <a href="gaming.html">Gaming<span class="border-menu"></span></a>
+                                <a href="{{route('category.wise.blog',$header_category->slug)}}">{{$header_category->name}}<span class="border-menu"></span></a>
                             </li>
-                            <li class="menu-item">
-                                <a href="active.html">Active<span class="border-menu"></span></a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="active.html">Music<span class="border-menu"></span></a>
-                            </li>
+                            @endforeach
                             <li class="menu-item">
                                 <a href="active.html">Video<span class="border-menu"></span></a>
                             </li>
@@ -98,7 +79,7 @@
             <li class="menu-item">
                 <a href="#">Home<span class="border-menu"></span></a>
             </li>
-            <li class="menu-item menu-item-has-children">
+            <!-- <li class="menu-item menu-item-has-children">
                 <a href="#">Category</span><span
                         class="border-menu"></span></a>
                 <ul class="sub-menu">
@@ -112,16 +93,12 @@
                         <a href="category.html">Category Page<span class="border-menu"></span></a>
                     </li>
                 </ul>
-            </li>
+            </li> -->
+            @foreach($header_categories as $header_category)
             <li class="menu-item">
-                <a href="gaming.html">Gaming<span class="border-menu"></span></a>
+                <a href="{{route('category.wise.blog',$header_category->slug)}}">{{$header_category->name}}<span class="border-menu"></span></a>
             </li>
-            <li class="menu-item">
-                <a href="active.html">Active<span class="border-menu"></span></a>
-            </li>
-            <li class="menu-item">
-                <a href="active.html">Music<span class="border-menu"></span></a>
-            </li>
+            @endforeach
             <li class="menu-item">
                 <a href="active.html">Video<span class="border-menu"></span></a>
             </li>
@@ -169,8 +146,9 @@
                <span class="jl_close_wapper search_form_menu_personal_click"><span class="jl_close_1"></span><span
                        class="jl_close_2"></span></span>
     </div>
-    <form method="get" class="searchform_theme" action="#">
-        <input type="text" placeholder="Search..." value="" name="s" class="search_btn" />
+    <form method="post" class="searchform_theme" action="{{route('search.wise.blog')}}">
+        @csrf
+        <input type="text" placeholder="Search..." name="search" class="search_btn" />
         <button type="submit" class="button">
             <i class="fa fa-search"></i>
         </button>

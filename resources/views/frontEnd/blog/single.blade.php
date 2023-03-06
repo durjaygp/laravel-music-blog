@@ -13,14 +13,16 @@
                             <div class="single_section_content box blog_large_post_style">
                                 <div class="jl_single_style2">
                                     <div class="single_post_entry_content single_bellow_left_align jl_top_single_title jl_top_title_feature">
-                                        <span class="meta-category-small single_meta_category"><a class="post-category-color-text" style="background:#7fbc1e" href="#">{{$blog->category->name}}</a></span>
+                                        <span class="meta-category-small single_meta_category"><a class="post-category-color-text" style="background:#7fbc1e" 
+                                        href="{{route('category.wise.blog',$blog->category->slug)}}">
+                                        {{$blog->category->name}}</a></span>
                                         <h1 class="single_post_title_main" alt="{{$blog->title}}">{{$blog->title}}</h1>
                                         <p class="post_subtitle_text">
                                             {{$blog->description}}
                                         </p>
                                         <span class="single-post-meta-wrapper">
-                                            <span class="post-author"><span><img src="img/favicon.jpg" width="50" height="50" alt="{{$blog->user->name}}" class="avatar avatar-50 wp-user-avatar wp-user-avatar-50 alignnone photo" />
-                                                    <a href="#" title="Posts by {{$blog->user->name}}" rel="author">{{$blog->user->name}}</a></span></span>
+                                            <span class="post-author"><span><img src="{{asset($blog->user->image)}}" width="50" height="50" alt="{{$blog->user->name}}" class="avatar avatar-50 wp-user-avatar wp-user-avatar-50 alignnone photo" />
+                                                    <a href="{{route('author.wise.blog',$blog->user->id)}}" title="Posts by {{$blog->user->name}}" rel="author">{{$blog->user->name}}</a></span></span>
                                             <span class="post-date updated"><i class="fa fa-clock-o"></i>{{ $blog->created_at->format('M d, Y') }}</span>
 
                                         </span>
@@ -39,13 +41,11 @@
                                 <div class="auth">
                                     <div class="author-info">
                                         <div class="author-avatar">
-                                            <img src="img/favicon.jpg" width="165" height="165" alt="{{$blog->user->name}}" class="avatar avatar-165 wp-user-avatar wp-user-avatar-165 alignnone photo" />                                    </div>
+                                            <img src="{{asset($blog->user->image)}}" width="165" height="165" alt="{{$blog->user->name}}" class="avatar avatar-165 wp-user-avatar wp-user-avatar-165 alignnone photo" />                                    </div>
                                         <div class="author-description">
-                                            <h5><a href="#">{{$blog->user->name}}</a></h5>
+                                            <h5><a href="{{route('author.wise.blog',$blog->user->id)}}">{{$blog->user->name}}</a></h5>
                                             <p>
-                                                Mauris mattis auctor cursus. Phasellus tellus tellus, imperdiet ut imperdiet eu,
-                                                iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat.
-                                                Suspendisse vulputate porttitor condimentum.
+                                            {{$blog->user->description}}
                                             </p>
                                         </div>
                                     </div>
@@ -159,50 +159,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-4" id="sidebar">
-                    <div id="disto_recent_post_widget-7" class="widget post_list_widget">
-                        <div class="widget_jl_wrapper"><span class="jl_none_space"></span>
-                            <div class="widget-title">
-                                <h2>Recent Posts</h2>
-                            </div>
-                            <div>
-                                <ul class="feature-post-list recent-post-widget">
-                                    @foreach($recentblog as $blog)
-                                    <li>
-                                        <a href="#" class="jl_small_format feature-image-link image_post featured-thumbnail" title="$blog->title">
-                                            <img width="120" height="120" src="{{asset($blog->image)}}" class="attachment-disto_small_feature size-disto_small_feature wp-post-image" alt="{{$blog->title}}" />
-                                            <div class="background_over_image"></div>
-                                        </a>
-                                        <div class="item-details">
-                                            <span class="meta-category-small"><a class="post-category-color-text" style="background:#d800f9" href="#">{{$blog->category->name}}</a></span>
-                                            <h3 class="feature-post-title"><a href="{{route('blog',$blog->slug)}}">{{$blog->title}}</a></h3>
-                                            <span class="post-meta meta-main-img auto_image_with_date">
-                                                <span class="post-date"><i class="fa fa-clock-o"></i>{{ $blog->created_at->format('M d, Y') }}</span></span>
-                                        </div>
-                                    </li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                            <span class="jl_none_space"></span>
-                        </div>
-                    </div>
-                    <span class="jl_none_space"></span>
-                    <div id="disto_category_image_widget_register-5" class="widget jellywp_cat_image">
-                        <div class="wrapper_category_image">
-                            <div class="category_image_wrapper_main">
-                                @foreach($categories as $category)
-                                <div class="category_image_bg_image" style="">
-                                    <a class="category_image_link" id="category_color_4" href="#">
-                                        <span class="jl_cm_overlay"><span class="jl_cm_name">{{$category->name}}</span><span class="jl_cm_count">{{$category->blogs_count}}</span></span></a>
-                                    <div class="category_image_bg_overlay" style="background: #d1783c;"></div>
-                                </div>
-                                @endforeach
-                            </div> <span class="jl_none_space"></span>
-                        </div>
-                    </div><span class="jl_none_space"></span>
-
-                    <span class="jl_none_space"></span>
-                </div>
+                @include('frontEnd.include.rightSideBar')
             </div>
         </div>
     </section>
